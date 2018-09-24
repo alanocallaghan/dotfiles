@@ -1,0 +1,33 @@
+startup_message off
+
+# Make screen session start as a normal shell
+shell -$SHELL
+
+escape ^Ss
+
+# Bind F11 and F12 (NOT F1 and F2) to previous and next screen window
+bindkey -k F1 prev
+bindkey -k F2 next
+
+
+defscrollback 5000
+# termcapinfo * ti@:te@
+
+
+# Number from 1, not zero
+bind c screen 1
+bind ^c screen 1
+bind 0 select 1
+screen 1
+
+
+# THIS IS THE PRETTY BIT
+#change the hardstatus settings to give an window list at the bottom of the                                                                        
+##screen, with the time and date and with the current window highlighted                                                                            
+caption always "%{= bb}%{+b w}%n %t %h %=%l %H %c"
+hardstatus             alwayslastline                                                                                                                          
+#hardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+
+
+activity "Activity in %t(%n)"
