@@ -130,6 +130,8 @@ export PATH=$PATH:$HOME/local/bin
 ## Turn off ctrl + \ quit
 stty quit undef
 
+export R_MAX_NUM_DLLS=200
+
 source /home/alan/.rvm/scripts/rvm
 export PATH="$PATH:/usr/local/texlive/2018/bin/x86_64-linux"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
