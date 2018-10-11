@@ -61,3 +61,11 @@ assign("print.debuggerclass", function(debugger) {
 }, envir = customCommands)
 
 attach(customCommands)
+
+#if (require("ggplot2")) {
+#  t <- theme_bw()
+#  t$plot.title <- element_text(hjust = 0.5)
+#  theme_set(t)
+#}
+require("BiocManager")
+
