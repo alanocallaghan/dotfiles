@@ -9,4 +9,4 @@
 	required = true
 	clean = git-lfs clean -- %f
 [remind]
-	paths = /home/alan/Documents/github/*
+	paths = /home/alan/Documents/github/*, /home/alan/Documents/github/VallejosGroup/*

@@ -138,3 +138,5 @@ export PATH="$PATH:/usr/local/texlive/2018/bin/x86_64-linux"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 umask 022
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
