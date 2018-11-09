@@ -4,6 +4,8 @@ alias l="ls"
 alias la="ls -a"
 alias ll="ls -lah"
 
+## Copy to clipboard
+alias cv="xclip -selection c"
 ## Viewing mounted disks
 alias mnt="mount | column -t"
 
