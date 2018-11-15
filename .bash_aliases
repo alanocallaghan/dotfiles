@@ -12,6 +12,8 @@ alias mnt="mount | column -t"
 ## View devices on local network
 alias scan='nmap -sn "$(hostname -I)/24"'
 
+## github extension
+alias git="hub"
 ## git commands
 alias gs="git status "
 alias gss="git stash save"

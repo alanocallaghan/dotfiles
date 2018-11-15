@@ -38,7 +38,9 @@ local({
 })
 
 options(
-  devtools.desc.author = '"Alan O Callaghan <alan.ocallaghan@outlook.com> [aut,cre]"'
+  devtools.desc.author = 'person("Alan", "O\'Callaghan", 
+    email = "alan.ocallaghan@outlook.com",
+    role = c("aut", "cre"))'
 )
 
 customCommands <- new.env()
