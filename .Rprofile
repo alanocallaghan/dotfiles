@@ -3,7 +3,8 @@ require("tracer")
 if (require("prettycode")) {
   prettycode::prettycode()
 }
-# Recommended by devtools...
+require("BiocManager")
+## Recommended by devtools...
 .First <- function() {
 
   options(
@@ -69,5 +70,4 @@ attach(customCommands)
 #  t$plot.title <- element_text(hjust = 0.5)
 #  theme_set(t)
 #}
-require("BiocManager")
 
