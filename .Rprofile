@@ -3,7 +3,8 @@ require("tracer")
 if (require("prettycode")) {
   prettycode::prettycode()
 }
-# Recommended by devtools...
+require("BiocManager")
+## Recommended by devtools...
 .First <- function() {
 
   options(
@@ -38,7 +39,9 @@ local({
 })
 
 options(
-  devtools.desc.author = '"Alan O Callaghan <alan.ocallaghan@outlook.com> [aut,cre]"'
+  devtools.desc.author = 'person("Alan", "O\'Callaghan", 
+    email = "alan.ocallaghan@outlook.com",
+    role = c("aut", "cre"))'
 )
 
 customCommands <- new.env()
@@ -67,5 +70,4 @@ attach(customCommands)
 #  t$plot.title <- element_text(hjust = 0.5)
 #  theme_set(t)
 #}
-require("BiocManager")
 
