@@ -45,6 +45,6 @@ alias gitobjects="git rev-list --objects --all | git cat-file --batch-check='%(o
 alias grms="git-remind status"
 alias grmc='cd $(git remind status -n | fzf)'
 
-#if command -v bat >/dev/null; then 
-#    alias cat=bat; 
-#fi
+if command -v bat >/dev/null; then 
+    alias cat=bat; 
+fi

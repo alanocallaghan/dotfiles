@@ -7,15 +7,15 @@ if (requireNamespace("rlang")) {
   options(error = rlang::entrace)
 }
 require("BiocManager")
+
 ## Recommended by devtools...
 .First <- function() {
-
   options(
     browserNLdisabled = TRUE,
     deparse.max.lines = 2)
-
 }
 
+## Set terminal width
 tryCatch(
   {
     options(
@@ -32,15 +32,17 @@ tryCatch(
     options(width = 120)}
 )
 
-
+## No GUI menus
 options(menu.graphics = FALSE)
 
+## Set mirror
 local({
     r <- getOption("repos");
     r["CRAN"] <- "https://cloud.r-project.org/"; 
     options(repos = r)
 })
 
+## Set author for R packages
 options(
   devtools.desc.author = 'person("Alan", "O\'Callaghan", 
     email = "alan.ocallaghan@outlook.com",
@@ -49,11 +51,11 @@ options(
 
 customCommands <- new.env()
 
-#assign("qq", structure("no", class = "quitterclass"), envir = customCommands)
-#assign("print.quitterclass", function(quitter) {
-#  message(" * quitting, not saving workspace")
-#  base::quit(quitter[1L])
-#}, envir = customCommands)
+assign("qq", structure("no", class = "quitterclass"), envir = customCommands)
+assign("print.quitterclass", function(quitter) {
+  message(" * quitting, not saving workspace")
+  base::quit(quitter[1L])
+}, envir = customCommands)
 
 assign("dd", structure("", class = "debuggerclass"), envir = customCommands)
 assign("print.debuggerclass", function(debugger) {
