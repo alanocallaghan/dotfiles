@@ -3,8 +3,5 @@
 	name = Alan O'Callaghan
 [push]
 	default = simple
-[filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+[remind]
+	paths = /home/alan/Documents/github/*, /home/alan/Documents/github/VallejosGroup/*, /home/alan/.config/sublime-text-3/Packages/User/

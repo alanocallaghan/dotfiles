@@ -4,12 +4,16 @@ alias l="ls"
 alias la="ls -a"
 alias ll="ls -lah"
 
+## Copy to clipboard
+alias cv="xclip -selection c"
 ## Viewing mounted disks
 alias mnt="mount | column -t"
 
 ## View devices on local network
 alias scan='nmap -sn "$(hostname -I)/24"'
 
+## github extension
+alias git="hub"
 ## git commands
 alias gs="git status "
 alias gss="git stash save"
@@ -38,6 +42,8 @@ alias gt="git tag"
 alias grvt="git revert"
 alias gcn="git clone"
 alias gitobjects="git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | sed -n 's/^blob //p' | sort --numeric-sort --key=2 | cut -c 1-12,41- | numfmt --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest"
+alias grms="git-remind status"
+alias grmc='cd $(git remind status -n | fzf)'
 
 #if command -v bat >/dev/null; then 
 #    alias cat=bat; 
