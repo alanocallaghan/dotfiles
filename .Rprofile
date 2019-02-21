@@ -16,21 +16,11 @@ require("BiocManager")
 }
 
 ## Set terminal width
-#tryCatch(
-#  {
-#    options(
-#      width = as.integer(Sys.getenv("COLUMNS")))
-#    },
-#  error = function(err) {
-#    write(
-#        paste(
-#            "Can't get your terminal width. Put ``export COLUMNS'' in your",
-#            ".bashrc. Or something. Setting width to 120 chars",
-#            stderr()
-#        )
-#    )
-#    options(width = 120)}
-#)
+try({
+  options(
+    width = as.integer(Sys.getenv("COLUMNS")))
+  }
+)
 
 ## No GUI menus
 options(menu.graphics = FALSE)
