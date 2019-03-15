@@ -3,6 +3,7 @@ alias ls="ls --color=auto"
 alias l="ls"
 alias la="ls -a"
 alias ll="ls -lah"
+alias lt="ll -t"
 
 ## Copy to clipboard
 alias cv="xclip -selection c"
