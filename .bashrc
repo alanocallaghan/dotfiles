@@ -168,3 +168,4 @@ unset __conda_setup
 # <<< conda init <<<
 
 export EDITOR="nano"
+export MC_CORES=6
