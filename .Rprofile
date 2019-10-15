@@ -17,11 +17,11 @@ options(mc.cores = parallel::detectCores())
 }
 
 ## Set terminal width
-try({
-  options(
-    width = as.integer(Sys.getenv("COLUMNS")))
-  }
-)
+#try({
+#  options(
+#    width = as.integer(Sys.getenv("COLUMNS")))
+#  }
+#)
 
 ## No GUI menus
 options(menu.graphics = FALSE)
