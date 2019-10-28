@@ -132,7 +132,6 @@ stty quit undef
 
 export R_MAX_NUM_DLLS=200
 
-source /home/alan/.rvm/scripts/rvm
 # golang
 export PATH=$PATH:/usr/local/go/bin
 
