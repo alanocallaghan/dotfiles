@@ -8,3 +8,5 @@
 !.screenrc
 !.nanorc
 !.gitignore
+!.vimrc
+!.globalgitignore

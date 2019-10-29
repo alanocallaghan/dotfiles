@@ -24,6 +24,7 @@ alias ga="git add "
 alias gc="git commit "
 alias gp="git pull "
 alias gd="git diff "
+alias gdw="git diff -w"
 alias gpu="git push"
 alias gco="git checkout "
 alias gr="git reset"
@@ -43,11 +44,12 @@ alias gt="git tag"
 alias grvt="git revert"
 alias gcn="git clone"
 alias gitobjects="git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | sed -n 's/^blob //p' | sort --numeric-sort --key=2 | cut -c 1-12,41- | numfmt --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest"
-alias grms="git-remind status"
-alias grmc='cd $(git remind status -n | fzf)'
+alias grs="git-remind status"
+alias grc='cd $(git remind status -n | fzf)'
 
 if command -v bat >/dev/null; then 
     alias cat=bat; 
 fi
 
-alias pls=sudo
+alias python="python3"
+alias pls="sudo"
