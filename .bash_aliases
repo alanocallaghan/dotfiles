@@ -3,6 +3,7 @@ alias ls="ls --color=auto"
 alias l="ls"
 alias la="ls -a"
 alias ll="ls -lah"
+alias lt="ls -laht"
 
 ## Copy to clipboard
 alias cv="xclip -selection c"
@@ -48,3 +49,5 @@ alias grmc='cd $(git remind status -n | fzf)'
 if command -v bat >/dev/null; then 
     alias cat=bat; 
 fi
+
+alias pls=sudo

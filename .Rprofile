@@ -1,9 +1,9 @@
-require("devtools")
-require("tracer")
-if (require("prettycode")) {
-  prettycode::prettycode()
-}
-require("BiocManager")
+#require("devtools")
+#require("tracer")
+#if (require("prettycode")) {
+#  prettycode::prettycode()
+#}
+#require("BiocManager")
 
 ## Recommended by devtools...
 .First <- function() {
@@ -13,21 +13,21 @@ require("BiocManager")
 }
 
 ## Set terminal width
-tryCatch(
-  {
-    options(
-      width = as.integer(Sys.getenv("COLUMNS")))
-    },
-  error = function(err) {
-    write(
-        paste(
-            "Can't get your terminal width. Put ``export COLUMNS'' in your",
-            ".bashrc. Or something. Setting width to 120 chars",
-            stderr()
-        )
-    )
-    options(width = 120)}
-)
+#tryCatch(
+#  {
+#    options(
+#      width = as.integer(Sys.getenv("COLUMNS")))
+#    },
+#  error = function(err) {
+#    write(
+#        paste(
+#            "Can't get your terminal width. Put ``export COLUMNS'' in your",
+#            ".bashrc. Or something. Setting width to 120 chars",
+#            stderr()
+#        )
+#    )
+#    options(width = 120)}
+#)
 
 ## No GUI menus
 options(menu.graphics = FALSE)
@@ -73,3 +73,4 @@ attach(customCommands)
 #  theme_set(t)
 #}
 
+options(usethis.protocol = "ssh")

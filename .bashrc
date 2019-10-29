@@ -132,7 +132,6 @@ stty quit undef
 
 export R_MAX_NUM_DLLS=200
 
-source /home/alan/.rvm/scripts/rvm
 # golang
 export PATH=$PATH:/usr/local/go/bin
 
@@ -168,3 +167,7 @@ unset __conda_setup
 # <<< conda init <<<
 
 export EDITOR="nano"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/Intellij_IDEA/bin"
