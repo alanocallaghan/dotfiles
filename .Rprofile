@@ -62,3 +62,4 @@ attach(customCommands)
 #}
 
 options(usethis.protocol = "ssh")
+options(reprex.advertise=FALSE)
