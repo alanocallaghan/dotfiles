@@ -50,10 +50,12 @@ alias gunmerged="git ls-files --unmerged | cut -f2 | uniq"
 
 
 if command -v bat >/dev/null; then 
-    alias cat=bat; 
+    alias cat=bat
+    alias catp="cat -p"
 fi
 
 alias python="python3"
 alias pls="sudo"
 
 alias R-devel="/opt/R-devel/bin/R"
+alias R352="/opt/R352/bin/R"
