@@ -18,8 +18,8 @@ alias git="hub"
 ## git commands
 alias gs="git status "
 alias gss="git stash save"
-alias gsp="git stash pop"
-alias gsa="git stash apply"
+alias gstp="git stash pop"
+alias gsta="git stash apply"
 alias ga="git add "
 alias gc="git commit "
 alias gp="git pull "
@@ -54,6 +54,8 @@ if command -v bat >/dev/null; then
 fi
 
 alias python="python3"
+alias pip="pip3"
 alias pls="sudo"
 
 alias R-devel="/opt/R-devel/bin/R"
+alias R-3.5="/opt/R-3.5/bin/R"
