@@ -62,4 +62,5 @@ attach(customCommands)
 #}
 
 options(usethis.protocol = "ssh")
-options(reprex.advertise=FALSE)
+options(usethis.full_name = "Alan O'Callaghan")
+options(reprex.advertise = FALSE)
