@@ -52,6 +52,7 @@ alias gunmerged="git ls-files --unmerged | cut -f2 | uniq"
 if command -v bat >/dev/null; then 
     alias cat=bat
     alias catp="cat -p"
+    alias capt="cat -p"
 fi
 
 alias python="python3"
