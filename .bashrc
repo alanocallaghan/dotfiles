@@ -121,8 +121,6 @@ if ! shopt -oq posix; then
 fi
 
 shopt -s checkwinsize
-## For R terminal width
-export COLUMNS
 
 ## Turn off ctrl+s hotkey
 [[ $- == *i* ]] && stty -ixon
@@ -130,7 +128,7 @@ export PATH=$PATH:$HOME/local/bin
 ## Turn off ctrl + \ quit
 stty quit undef
 
-export R_MAX_NUM_DLLS=200
+export R_MAX_NUM_DLLS=1000
 
 # golang
 export PATH=$PATH:/usr/local/go/bin
@@ -141,22 +139,16 @@ umask 022
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-[ -f ~/.bash_secrets ] && source ~/.bash_secrets
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/alan/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/alan/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/alan/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/alan/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 
-
 export EDITOR="nano"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$HOME/Intellij_IDEA/bin"
 export PATH="$PATH:$HOME/.local/bin"
-export MC_CORES=6
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -173,3 +165,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
