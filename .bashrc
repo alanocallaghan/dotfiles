@@ -143,6 +143,9 @@ umask 022
 
 [ -f ~/.bash_secrets ] && source ~/.bash_secrets
 
+[ -f ~/.rvm/scripts/rvm ] && source /home/alan/.rvm/scripts/rvm
+
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/alan/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/alan/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
