@@ -5,10 +5,7 @@
 	default = simple
 [remind]
 	paths = /home/alan/Documents/github/*, /home/alan/Documents/github/VallejosGroup/*, /home/alan/.config/sublime-text-3/Packages/User/
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [core]
-	excludesfile = /home/alan/.globalgitignore
+	excludesfile = /home/alan/.gitignore_global
+[credential]
+	helper = cache

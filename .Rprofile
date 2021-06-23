@@ -9,13 +9,14 @@
 #require("BiocManager")
 
 options(mc.cores = parallel::detectCores())
+options(Ncpus = parallel::detectCores())
+
 ## Recommended by devtools...
 .First <- function() {
   options(
     browserNLdisabled = TRUE,
     deparse.max.lines = 2)
 }
-
 
 ## No GUI menus
 options(menu.graphics = FALSE)
@@ -62,3 +63,5 @@ attach(customCommands)
 #}
 
 options(usethis.protocol = "ssh")
+options(usethis.full_name = "Alan O'Callaghan")
+options(reprex.advertise = FALSE)

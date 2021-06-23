@@ -47,13 +47,22 @@ alias gitobjects="git rev-list --objects --all | git cat-file --batch-check='%(o
 alias grs="git-remind status"
 alias grc='cd $(git remind status -n | fzf)'
 alias gunmerged="git ls-files --unmerged | cut -f2 | uniq"
+alias prettylog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 
-
-if command -v bat >/dev/null; then 
-    alias cat=bat; 
+if command -v bat &> /dev/null; then 
+    alias cat=bat
+    alias catp="cat -p"
+    alias capt="cat -p"
 fi
 
 alias python="python3"
+alias pip="/usr/bin/env python3 -m pip"
 alias pls="sudo"
 
 alias R-devel="/opt/R-devel/bin/R"
+alias R-3.5="/opt/R-3.5/bin/R"
+
+if [ -f ~/.local/bin/radian ]; then
+    alias r="radian"
+fi
+
