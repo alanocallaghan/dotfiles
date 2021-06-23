@@ -1,0 +1,7 @@
+auto_activate_base: false
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+  - r
+  - anaconda
