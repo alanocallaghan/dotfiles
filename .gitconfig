@@ -4,7 +4,7 @@
 [push]
 	default = simple
 [remind]
-	paths = /home/alan/Documents/github/*, /home/alan/Documents/github/VallejosGroup/*, /home/alan/.config/sublime-text-3/Packages/User/
+	paths = /home/alan/Documents/github/**,/home/alan/Documents/github/documents/*,/home/alan/Documents/github/carpentries/*,/home/alan/Documents/github/R/*,/home/alan/.config/sublime-text-3/Packages/User/
 [core]
 	excludesfile = /home/alan/.gitignore_global
 [credential]
