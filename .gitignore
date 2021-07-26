@@ -10,3 +10,5 @@
 !.gitignore
 !.vimrc
 !.globalgitignore
+!.condarc
+!.radian_profile
