@@ -139,6 +139,8 @@ umask 022
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+[ -f ~/.bash_secrets ] && source ~/.bash_secrets
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/alan/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/alan/Downloads/google-cloud-sdk/path.bash.inc'; fi
 

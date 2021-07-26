@@ -28,3 +28,6 @@ options(
 options(usethis.protocol = "ssh")
 options(usethis.full_name = "Alan O'Callaghan")
 options(reprex.advertise = FALSE)
+
+
+options(vsc.use_httpgd = TRUE)
