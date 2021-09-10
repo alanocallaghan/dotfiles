@@ -66,3 +66,4 @@ if [ -f ~/.local/bin/radian ]; then
     alias r="radian"
 fi
 
+alias bserve="bundle exec jekyll serve"
