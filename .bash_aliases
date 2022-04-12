@@ -60,7 +60,7 @@ alias pip="/usr/bin/env python3 -m pip"
 alias pls="sudo"
 
 alias R-devel="/opt/R-devel/bin/R"
-alias R-3.5="/opt/R-3.5/bin/R"
+alias r-devel="radian --r-binary=/opt/R-devel/bin/R"
 
 if [ -f ~/.local/bin/radian ]; then
     alias r="radian"
