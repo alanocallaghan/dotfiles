@@ -6,7 +6,7 @@ if (require("prettycode")) {
 if (requireNamespace("rlang")) {
   options(error = rlang::entrace)
 }
-require("BiocManager")
+#require("BiocManager")
 
 ## Recommended by devtools...
 .First <- function() {
