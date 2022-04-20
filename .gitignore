@@ -8,3 +8,7 @@
 !.screenrc
 !.nanorc
 !.gitignore
+!.vimrc
+!.globalgitignore
+!.condarc
+!.radian_profile

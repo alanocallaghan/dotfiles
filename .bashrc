@@ -56,8 +56,12 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w/\[\033[01;33m\]\$(parse_git_branch) \[\033[00m\]\$ "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -121,8 +125,6 @@ if ! shopt -oq posix; then
 fi
 
 shopt -s checkwinsize
-## For R terminal width
-export COLUMNS
 
 ## Turn off ctrl+s hotkey
 [[ $- == *i* ]] && stty -ixon
@@ -130,19 +132,18 @@ export PATH=$PATH:$HOME/local/bin
 ## Turn off ctrl + \ quit
 stty quit undef
 
-export R_MAX_NUM_DLLS=200
+export R_MAX_NUM_DLLS=1000
 
-source /home/alan/.rvm/scripts/rvm
 # golang
 export PATH=$PATH:/usr/local/go/bin
 
 export PATH="$PATH:/usr/local/texlive/2018/bin/x86_64-linux"
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 umask 022
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+[ -f ~/.bash_secrets ] && source ~/.bash_secrets
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/alan/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/alan/Downloads/google-cloud-sdk/path.bash.inc'; fi
@@ -151,3 +152,33 @@ if [ -f '/home/alan/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/a
 if [ -f '/home/alan/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/alan/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 
 export EDITOR="nano"
+
+export PATH="$PATH:$HOME/Intellij_IDEA/bin"
+export PATH="$PATH:$HOME/.local/bin"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/alan/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/alan/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/alan/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/alan/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# my shell scripts
+export PATH="$PATH:$HOME/Documents/github/shell_scripts/"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. "$HOME/.cargo/env"

@@ -4,9 +4,12 @@
 [push]
 	default = simple
 [remind]
-	paths = /home/alan/Documents/github/*, /home/alan/Documents/github/VallejosGroup/*, /home/alan/.config/sublime-text-3/Packages/User/
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+	paths = /home/alan/Documents/github/**,/home/alan/Documents/github/documents/*,/home/alan/Documents/github/carpentries/*,/home/alan/Documents/github/R/*,/home/alan/.config/sublime-text-3/Packages/User/,/home/alan/,/home/alan/Documents/github/wallace/*
+[core]
+	excludesfile = /home/alan/.gitignore_global
+[credential]
+	helper = cache
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[url "ssh://git@gitlab.com/"]
+	insteadOf = https://gitlab.com/
