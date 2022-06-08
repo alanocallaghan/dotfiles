@@ -29,5 +29,7 @@ options(usethis.protocol = "ssh")
 options(usethis.full_name = "Alan O'Callaghan")
 options(reprex.advertise = FALSE)
 
-
 options(vsc.use_httpgd = TRUE)
+
+## https://github.com/r-lib/testthat/issues/92
+test <- function() devtools::test(reporter = testthat::ProgressReporter$new(show_praise = FALSE))
