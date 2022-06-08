@@ -1,3 +1,12 @@
+# require("devtools")
+# require("tracer")
+# if (require("prettycode")) {
+#   prettycode::prettycode()
+# }
+# if (requireNamespace("rlang")) {
+#   options(error = rlang::entrace)
+# }
+#require("BiocManager")
 options(mc.cores = parallel::detectCores())
 options(Ncpus = parallel::detectCores())
 
