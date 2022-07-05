@@ -12,3 +12,5 @@
 !.globalgitignore
 !.condarc
 !.radian_profile
+!.lscolors
+!.gterminal.preferences

@@ -1,0 +1,32 @@
+[legacy]
+schema-version=uint32 3
+
+[legacy/keybindings]
+full-screen='disabled'
+zoom-in='<Primary>equal'
+zoom-out='<Primary>minus'
+
+[legacy/profiles:]
+default='0d21d211-cf62-4a67-8cac-26f8866ab55f'
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '0d21d211-cf62-4a67-8cac-26f8866ab55f', '533aa74c-5a1d-4c52-8d96-abb306264c1f']
+
+[legacy/profiles:/:0d21d211-cf62-4a67-8cac-26f8866ab55f]
+background-color='rgb(36,37,31)'
+default-size-columns=80
+default-size-rows=80
+foreground-color='rgb(17,225,217)'
+login-shell=true
+palette=['rgb(23,20,33)', 'rgb(192,28,40)', 'rgb(38,162,105)', 'rgb(162,115,76)', 'rgb(18,72,139)', 'rgb(163,71,186)', 'rgb(42,161,179)', 'rgb(208,207,204)', 'rgb(94,92,100)', 'rgb(246,97,81)', 'rgb(51,218,122)', 'rgb(233,173,12)', 'rgb(42,123,222)', 'rgb(192,97,203)', 'rgb(51,199,222)', 'rgb(255,255,255)']
+scrollback-lines=500000
+use-theme-colors=false
+use-theme-transparency=false
+visible-name='Alan'
+
+[legacy/profiles:/:533aa74c-5a1d-4c52-8d96-abb306264c1f]
+background-color='rgb(255,255,255)'
+foreground-color='rgb(0,0,0)'
+use-theme-colors=false
+visible-name='temp'
+
+[legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+use-theme-transparency=false
