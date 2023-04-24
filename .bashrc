@@ -183,5 +183,6 @@ export NVM_DIR="$HOME/.nvm"
 
 . "$HOME/.cargo/env"
 
-source .lscolors
-cat ~/.gterminal.preferences | dconf load /org/gnome/terminal/legacy/profiles:/
+source ~/.lscolors
+cat ~/.gnome-terminal.properties | dconf load /org/gnome/terminal/
+# cat ~/dev/help/gnome-terminal.properties | dconf load /org/gnome/terminal/
