@@ -49,6 +49,10 @@ alias grc='cd $(git remind status -n | fzf)'
 alias gunmerged="git ls-files --unmerged | cut -f2 | uniq"
 alias prettylog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 
+alias pullall="find -name .git -execdir pwd \; -execdir git pull \;"
+alias pushall="find -name .git -execdir pwd \; -execdir git push \;"
+
+
 if command -v batcat &> /dev/null; then 
     alias cat=batcat
     alias catp="cat -p"

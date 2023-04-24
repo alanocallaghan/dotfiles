@@ -137,7 +137,8 @@ export R_MAX_NUM_DLLS=1000
 # golang
 export PATH=$PATH:/usr/local/go/bin
 
-export PATH="$PATH:/usr/local/texlive/2018/bin/x86_64-linux"
+# export PATH="$PATH:/usr/local/texlive/2018/bin/x86_64-linux"
+export PATH="$PATH:/usr/local/texlive/2022/bin/x86_64-linux"
 
 umask 022
 
@@ -174,9 +175,6 @@ unset __conda_setup
 # my shell scripts
 export PATH="$PATH:$HOME/Documents/github/shell_scripts/"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -186,3 +184,14 @@ export NVM_DIR="$HOME/.nvm"
 source ~/.lscolors
 cat ~/.gnome-terminal.properties | dconf load /org/gnome/terminal/
 # cat ~/dev/help/gnome-terminal.properties | dconf load /org/gnome/terminal/
+# ¬cat ~/.gterminal.preferences | dconf load /org/gnome/terminal/legacy/profiles:/
+
+export BROWSER="firefox"
+
+[ -s "~/.rbenv/bin/rbenv" ] && eval "$(~/.rbenv/bin/rbenv init - bash)"
+
+## for openslide/qupath but surely there's a better way?????
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/
+export PATH="$PATH:/usr/local/lib"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

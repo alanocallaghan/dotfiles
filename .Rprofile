@@ -41,7 +41,10 @@ options(reprex.advertise = FALSE)
 options(vsc.use_httpgd = TRUE)
 
 ## https://github.com/r-lib/testthat/issues/92
-tester <- function() devtools::test(reporter = testthat::ProgressReporter$new(show_praise = FALSE))
+test <- function(...) devtools::test(..., reporter = testthat::ProgressReporter$new(show_praise = FALSE))
 
-# https://github.com/r-lib/cli/issues/441#issuecomment-1090558541
+# https://github.com/r-lib/cli/issues/441
 options(cli.hyperlink=FALSE)
+
+options(max.print=100)
+options(styler.cache_root = "styler")
