@@ -157,20 +157,6 @@ export EDITOR="nano"
 export PATH="$PATH:$HOME/Intellij_IDEA/bin"
 export PATH="$PATH:$HOME/.local/bin"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/alan/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/alan/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/alan/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/alan/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # my shell scripts
 export PATH="$PATH:$HOME/Documents/github/shell_scripts/"
@@ -179,19 +165,58 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-. "$HOME/.cargo/env"
+[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 source ~/.lscolors
-cat ~/.gnome-terminal.properties | dconf load /org/gnome/terminal/
+cat ~/.gterminal.preferences | dconf load /org/gnome/terminal/
 # cat ~/dev/help/gnome-terminal.properties | dconf load /org/gnome/terminal/
 # ¬cat ~/.gterminal.preferences | dconf load /org/gnome/terminal/legacy/profiles:/
 
 export BROWSER="firefox"
 
-[ -s "~/.rbenv/bin/rbenv" ] && eval "$(~/.rbenv/bin/rbenv init - bash)"
+[ -s "$HOME/.rbenv/bin/rbenv" ] && eval "$(~/.rbenv/bin/rbenv init - bash)"
 
 ## for openslide/qupath but surely there's a better way?????
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/
 export PATH="$PATH:/usr/local/lib"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export PATH="/home/alan/graalvm-ce-java17-22.3.1/bin:$PATH"
+export JAVA_HOME="/home/alan/graalvm-ce-java17-22.3.1"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/alan/mambaforge/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/alan/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/home/alan/mambaforge/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/alan/mambaforge/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/home/alan/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/home/alan/mambaforge/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE="/home/alan/.local/bin/micromamba";
+export MAMBA_ROOT_PREFIX="/home/alan/micromamba";
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    if [ -f "/home/alan/micromamba/etc/profile.d/micromamba.sh" ]; then
+        . "/home/alan/micromamba/etc/profile.d/micromamba.sh"
+    else
+        export  PATH="/home/alan/micromamba/bin:$PATH"  # extra space after export prevents interference from conda init
+    fi
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
