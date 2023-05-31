@@ -182,7 +182,7 @@ export PATH="$PATH:/usr/local/lib"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-export PATH="/home/alan/graalvm-ce-java17-22.3.1/bin:$PATH"
+export PATH="$PATH:/home/alan/graalvm-ce-java17-22.3.1/bin"
 export JAVA_HOME="/home/alan/graalvm-ce-java17-22.3.1"
 
 # >>> conda initialize >>>
