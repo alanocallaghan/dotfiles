@@ -131,30 +131,22 @@ shopt -s checkwinsize
 ## Turn off ctrl + \ quit
 stty quit undef
 
-
+source ~/.lscolors
+cat ~/.gterminal.preferences | dconf load /org/gnome/terminal/legacy/profiles:/
 export R_MAX_NUM_DLLS=1000
 export EDITOR="nano"
-
+export BROWSER="firefox"
 umask 022 # only I get rwm perms
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 [ -f ~/.bash_secrets ] && source ~/.bash_secrets
 
-
-export NVM_DIR="$HOME/.nvm"
+eval "$(~/.rbenv/bin/rbenv init - bash)"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 . "$HOME/.cargo/env"
 
-source ~/.lscolors
-cat ~/.gterminal.preferences | dconf load /org/gnome/terminal/legacy/profiles:/
-
-export BROWSER="firefox"
-
-eval "$(~/.rbenv/bin/rbenv init - bash)"
-
+export NVM_DIR="$HOME/.nvm"
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
@@ -172,22 +164,6 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/alan/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/alan/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/alan/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/alan/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 
 export CUDA_HOME=/usr/local/cuda
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64

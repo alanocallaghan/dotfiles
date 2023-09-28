@@ -48,3 +48,6 @@ options(cli.hyperlink=FALSE)
 
 options(max.print=100)
 options(styler.cache_root = "styler")
+
+
+# credentials::set_github_pat()
