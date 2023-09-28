@@ -128,34 +128,50 @@ shopt -s checkwinsize
 
 ## Turn off ctrl+s hotkey
 [[ $- == *i* ]] && stty -ixon
-export PATH=$PATH:$HOME/local/bin
 ## Turn off ctrl + \ quit
 stty quit undef
 
+
 export R_MAX_NUM_DLLS=1000
+export EDITOR="nano"
 
-# golang
-export PATH=$PATH:/usr/local/go/bin
-
-# export PATH="$PATH:/usr/local/texlive/2018/bin/x86_64-linux"
-export PATH="$PATH:/usr/local/texlive/2022/bin/x86_64-linux"
-
-umask 022
+umask 022 # only I get rwm perms
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 [ -f ~/.bash_secrets ] && source ~/.bash_secrets
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/alan/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/alan/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/alan/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/alan/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export EDITOR="nano"
+. "$HOME/.cargo/env"
 
-export PATH="$PATH:$HOME/Intellij_IDEA/bin"
-export PATH="$PATH:$HOME/.local/bin"
+source ~/.lscolors
+cat ~/.gterminal.preferences | dconf load /org/gnome/terminal/legacy/profiles:/
+
+export BROWSER="firefox"
+
+eval "$(~/.rbenv/bin/rbenv init - bash)"
+
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE="/home/alan/.local/bin/micromamba";
+export MAMBA_ROOT_PREFIX="/home/alan/micromamba";
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    if [ -f "/home/alan/micromamba/etc/profile.d/micromamba.sh" ]; then
+        . "/home/alan/micromamba/etc/profile.d/micromamba.sh"
+    else
+        export  PATH="/home/alan/micromamba/bin:$PATH"  # extra space after export prevents interference from conda init
+    fi
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -172,24 +188,14 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+export CUDA_HOME=/usr/local/cuda
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64
+export PATH=$PATH:$CUDA_HOME/bin
+export PATH="$PATH:/usr/local/texlive/2022/bin/x86_64-linux"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export GOPATH=${HOME}/go
+export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
 # my shell scripts
 export PATH="$PATH:$HOME/Documents/github/shell_scripts/"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-. "$HOME/.cargo/env"
-
-source ~/.lscolors
-cat ~/.gterminal.preferences | dconf load /org/gnome/terminal/legacy/profiles:/
-
-export BROWSER="firefox"
-
-eval "$(~/.rbenv/bin/rbenv init - bash)"
-
-## for openslide/qupath but surely there's a better way?????
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/
-export PATH="$PATH:/usr/local/lib"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
