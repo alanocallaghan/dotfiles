@@ -128,81 +128,25 @@ shopt -s checkwinsize
 
 ## Turn off ctrl+s hotkey
 [[ $- == *i* ]] && stty -ixon
-export PATH=$PATH:$HOME/local/bin
 ## Turn off ctrl + \ quit
 stty quit undef
 
+source ~/.lscolors
+cat ~/.gterminal.preferences | dconf load /org/gnome/terminal/legacy/profiles:/
 export R_MAX_NUM_DLLS=1000
-
-# golang
-export PATH=$PATH:/usr/local/go/bin
-
-# export PATH="$PATH:/usr/local/texlive/2018/bin/x86_64-linux"
-export PATH="$PATH:/usr/local/texlive/2022/bin/x86_64-linux"
-
-umask 022
+export EDITOR="nano"
+export BROWSER="firefox"
+umask 022 # only I get rwm perms
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 [ -f ~/.bash_secrets ] && source ~/.bash_secrets
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/alan/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/alan/Downloads/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/alan/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/alan/Downloads/google-cloud-sdk/completion.bash.inc'; fi
-
-export EDITOR="nano"
-
-export PATH="$PATH:$HOME/Intellij_IDEA/bin"
-export PATH="$PATH:$HOME/.local/bin"
-
-
-# my shell scripts
-export PATH="$PATH:$HOME/Documents/github/shell_scripts/"
-
-export NVM_DIR="$HOME/.nvm"
+eval "$(~/.rbenv/bin/rbenv init - bash)"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. "$HOME/.cargo/env"
 
-[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
-
-source ~/.lscolors
-cat ~/.gterminal.preferences | dconf load /org/gnome/terminal/
-# cat ~/dev/help/gnome-terminal.properties | dconf load /org/gnome/terminal/
-# ¬cat ~/.gterminal.preferences | dconf load /org/gnome/terminal/legacy/profiles:/
-
-export BROWSER="firefox"
-
-[ -s "$HOME/.rbenv/bin/rbenv" ] && eval "$(~/.rbenv/bin/rbenv init - bash)"
-
-## for openslide/qupath but surely there's a better way?????
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/
-export PATH="$PATH:/usr/local/lib"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-export PATH="$PATH:/home/alan/graalvm-ce-java17-22.3.1/bin"
-export JAVA_HOME="/home/alan/graalvm-ce-java17-22.3.1"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/alan/mambaforge/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/alan/mambaforge/etc/profile.d/conda.sh" ]; then
-        . "/home/alan/mambaforge/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/alan/mambaforge/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-if [ -f "/home/alan/mambaforge/etc/profile.d/mamba.sh" ]; then
-    . "/home/alan/mambaforge/etc/profile.d/mamba.sh"
-fi
-# <<< conda initialize <<<
+export NVM_DIR="$HOME/.nvm"
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
@@ -235,3 +179,11 @@ case ":$PATH:" in
 esac
 
 # <<< juliaup initialize <<<
+
+export PATH="$PATH:/usr/local/texlive/2022/bin/x86_64-linux"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export GOPATH=${HOME}/go
+export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
+# my shell scripts
+export PATH="$PATH:$HOME/Documents/github/shell_scripts/"
