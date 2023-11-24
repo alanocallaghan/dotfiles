@@ -35,7 +35,7 @@ alias gsh="git show"
 alias gm="git merge"
 alias grb="git rebase"
 alias gitlog='git log --pretty=format:"%h[%cr, %cn]>> %s" --graph'
-alias gbp="git branch --merged | egrep -v '(^\*|master)' | xargs -r git branch -d"
+alias gbp="git branch --merged | egrep -v '(^\*|main|master)' | xargs -r git branch -d"
 alias gre="git remote"
 alias gcp="git cherry-pick"
 alias gi="git init"
@@ -54,9 +54,9 @@ alias pushall="find -name .git -execdir pwd \; -execdir git push \;"
 
 
 if command -v batcat &> /dev/null; then 
-    alias cat=batcat
-    alias catp="cat -p"
-    alias capt="cat -p"
+    alias cat="batcat -p"
+    alias catp="batcat"
+    alias capt="batcat"
 fi
 
 alias python="python3"

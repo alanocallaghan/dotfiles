@@ -220,3 +220,18 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/home/alan/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/home/alan/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<
