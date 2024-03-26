@@ -72,3 +72,7 @@ fi
 
 alias bserve="bundle exec jekyll serve"
 alias c.="code ."
+
+if command -v micromamba &> /dev/null; then
+    alias mamba=micromamba
+fi
