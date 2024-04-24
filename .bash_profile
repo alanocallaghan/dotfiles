@@ -1,7 +1,7 @@
 [[ -f "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
 
-. "$HOME/.cargo/env"
+[[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
 # >>> juliaup initialize >>>
 
@@ -22,4 +22,4 @@ esac
 # Added by Toolbox App
 export PATH="$PATH:/home/alan/.local/share/JetBrains/Toolbox/scripts"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

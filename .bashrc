@@ -144,7 +144,9 @@ umask 022 # only I get rwm perms
 eval "$(~/.rbenv/bin/rbenv init - bash)"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-. "$HOME/.cargo/env"
+if [ -f ~/.cargo/env ]; then
+    . ~/.cargo/env
+fi
 
 export NVM_DIR="$HOME/.nvm"
 
@@ -187,3 +189,7 @@ export GOPATH=${HOME}/go
 export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
 # my shell scripts
 export PATH="$PATH:$HOME/Documents/github/shell_scripts/"
+
+. "$HOME/.cargo/env"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

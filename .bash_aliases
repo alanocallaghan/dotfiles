@@ -72,3 +72,8 @@ fi
 
 alias bserve="bundle exec jekyll serve"
 alias c.="code ."
+
+if [ -f /home/alan/.local/bin/micromamba ]; then
+    alias mamba=micromamba
+    alias conda=micromamba
+fi
