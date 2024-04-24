@@ -1,7 +1,7 @@
 [user]
 	email = alan.ocallaghan@outlook.com
 	name = Alan O'Callaghan
-	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDRS+nUnJBJZ7wux4i69DI8s8zLGM0PRaHTFHtSSCdL8gq36CURml9UxWnhqmcatLO4vvnCi3rJd9emWDcBydirBYcIz7dq4AvFO5D0dcCvddWOwxZHpH/QoxjDHtiB20hDlGVKCJQ59gKo2+ok5iDNQTTjB9qUfNxRsHQD3XQicxAFi6Bry5mNoRTehhMz5wWRb383sx1ukcvalMmLNJVz6GvTvISrTp+mBg3U/FNageOtF6zmfE5Kwfskq/XzWPsdLvlQyWdncYPw87t1WDqGWH0QzqCruB+FETWoAe8FBnAY8aLjMf2l8ANXSHqmgCUYyqI+QN25zSpDmgVZvsRQoqVckhYpwfzB6xMtUR7Kc1TDHa7c+fk+e1Y2dwSKReFee3W2lAD+HRPMp+IZ6gU75CAtNc4eUTJxlCkOauKcQNP7OUdiO3HtJ66Sdr4eLEeOa0YqLuJ7Wz4X+4DNxcIfLDR+S0AUqKMsZ3Nvj6F/Ra2c7jRpJ9yb6hjdHZOq8sU= alan@pop-os
+	signingkey = /home/alan/.ssh/id_github.pub
 [push]
 	default = simple
 [remind]
