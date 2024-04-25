@@ -7,8 +7,8 @@
 #   options(error = rlang::entrace)
 # }
 #require("BiocManager")
-options(mc.cores = parallel::detectCores())
-options(Ncpus = parallel::detectCores())
+options(mc.cores = parallel::detectCores()-2)
+options(Ncpus = parallel::detectCores()-2)
 
 ## Recommended by devtools...
 .First <- function() {

@@ -1,6 +1,7 @@
 [user]
 	email = alan.ocallaghan@outlook.com
 	name = Alan O'Callaghan
+	signingkey = /home/alan/.ssh/id_github.pub
 [push]
 	default = simple
 [remind]
@@ -22,5 +23,9 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
 [rerere]
 	enabled = true

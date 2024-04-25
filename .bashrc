@@ -129,12 +129,12 @@ umask 022 # only I get rwm perms
 [ -f ~/.bash_secrets ] && source ~/.bash_secrets
 
 eval "$(~/.rbenv/bin/rbenv init - bash)"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-. "$HOME/.cargo/env"
+if [ -f ~/.cargo/env ]; then
+    . ~/.cargo/env
+fi
 
 
 # >>> mamba initialize >>>
