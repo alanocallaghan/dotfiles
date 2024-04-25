@@ -51,3 +51,4 @@ options(styler.cache_root = "styler")
 
 
 # credentials::set_github_pat()
+options(renv.verbose = TRUE)
