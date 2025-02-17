@@ -14,8 +14,6 @@ function clone_with_remotes {
   else
     ORIGIN="alanocallaghan"
   fi
-  echo $UPSTREAM
-  echo "git@github.com:$UPSTREAM/$REPO.git"
   git clone git@github.com:$UPSTREAM/$REPO.git
   pushd $REPO
   git remote set-url origin git@github.com:$ORIGIN/$REPO.git
