@@ -138,18 +138,14 @@ fi
 
 
 # >>> mamba initialize >>>
-# !! Contents within this block are managed by 'mamba init' !!
-export MAMBA_EXE="/home/alan/.local/bin/micromamba";
-export MAMBA_ROOT_PREFIX="/home/alan/micromamba";
-__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+# !! Contents within this block are managed by 'micromamba shell init' !!
+export MAMBA_EXE='/home/alan/.local/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/home/alan/micromamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__mamba_setup"
 else
-    if [ -f "/home/alan/micromamba/etc/profile.d/micromamba.sh" ]; then
-        . "/home/alan/micromamba/etc/profile.d/micromamba.sh"
-    else
-        export  PATH="/home/alan/micromamba/bin:$PATH"  # extra space after export prevents interference from conda init
-    fi
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from micromamba activate
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
