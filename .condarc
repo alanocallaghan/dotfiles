@@ -1,6 +1,8 @@
 channels:
-  - conda-forge
   - bioconda
   - r
   - defaults
+  - conda-forge
+  - nodefaults
 auto_activate_base: false
+channel_priority: flexible
