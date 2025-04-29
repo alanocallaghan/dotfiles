@@ -22,4 +22,6 @@ esac
 # Added by Toolbox App
 export PATH="$PATH:/home/alan/.local/share/JetBrains/Toolbox/scripts"
 
-# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Added by `rbenv init` on Mon 27 Jan 10:49:35 GMT 2025
+eval "$(~/.rbenv/bin/rbenv init - --no-rehash bash)"
