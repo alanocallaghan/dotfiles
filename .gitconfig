@@ -16,7 +16,7 @@
 [url "ssh://git@gitlab.com/"]
 	insteadOf = https://gitlab.com/
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [pull]
 	rebase = false
 [filter "lfs"]

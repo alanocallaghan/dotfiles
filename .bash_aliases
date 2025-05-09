@@ -77,3 +77,5 @@ if [ -f /home/alan/bin/micromamba ]; then
     alias mamba=micromamba
     alias conda=micromamba
 fi
+
+alias ipython=ipython3
