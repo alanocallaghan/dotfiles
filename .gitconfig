@@ -30,3 +30,5 @@
 	format = ssh
 [rerere]
 	enabled = true
+[fetch]
+	prune = true

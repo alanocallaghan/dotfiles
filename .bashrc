@@ -165,7 +165,7 @@ esac
 
 # <<< juliaup initialize <<<
 
-export PATH="$PATH:/usr/local/texlive/2024/bin/x86_64-linux"
+export PATH="$PATH:/usr/local/texlive/2025/bin/x86_64-linux"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export GOPATH=${HOME}/go
@@ -216,3 +216,4 @@ eval "$(pyenv init - bash)"
 
 # Load pyenv-virtualenv automatically
 # eval "$(pyenv virtualenv-init -)"
+. "$HOME/.cargo/env"

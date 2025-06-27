@@ -21,3 +21,7 @@ function clone_with_remotes {
   git fetch origin && git fetch upstream
   popd
 }
+
+function update_gradle {
+  ./gradlew wrapper --gradle-version latest
+}
